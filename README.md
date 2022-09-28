@@ -1,4 +1,4 @@
-# Landing pag for uoftbg.com
+# Landing page for uoftbg.com
 
 ## Development
 
