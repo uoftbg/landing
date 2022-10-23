@@ -5,8 +5,13 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    aspectRatio: {
+      golden: '1.618'  // the golden ratio
+    },
     extend: {
       colors: {
+        "offwhite": "#f8f3ed",
+        "offblack": "#020604",
         "uoftbg-purple": {
           // uoftbg branding colours
           "light": "#6440A4",
