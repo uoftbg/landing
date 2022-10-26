@@ -3,98 +3,46 @@ import Head from "next/head";
 import React from "react";
 import ThemeSwitcher from "../components/theme_switcher";
 
-const SHAPES: any = [
-  { background: "#b0bec5", zIndex: 2 },
-  { background: "#f5f5f5", zIndex: 2 },
-  { background: "#9b5de5", zIndex: 1 },
-  { background: "#f15bb5", zIndex: 2 },
-  { background: "#fee440", zIndex: 2 },
-  { background: "#00bbf9", zIndex: 2 },
-  { background: "#00f5d4", zIndex: 2 },
-];
+import Parallax from "parallax-js";
+import Tilt from "react-vanilla-tilt";
 
-const CONFIGURATIONS: any = [
+const STAR_LAYERS = [
   {
-    positions: [
-      { left: "0%", top: "0%", height: "50%", width: "20%" },
-      { left: "20%", top: "0%", height: "50%", width: "30%" },
-      { left: "50%", top: "0%", height: "100%", width: "50%" },
-      { left: "0%", top: "50%", height: "50%", width: "30%" },
-      { left: "30%", top: "50%", height: "50%", width: "20%" },
-      { left: "70%", top: "50%", height: "50%", width: "30%" },
-      { left: "85%", top: "75%", height: "25%", width: "15%" },
-    ],
+    id: "small",
+    count: 100,
+    depth: 0.5,
   },
   {
-    positions: [
-      { left: "25%", top: "20%", height: "80%", width: "15%" },
-      { left: "40%", top: "20%", height: "50%", width: "10%" },
-      { left: "50%", top: "0%", height: "100%", width: "25%" },
-      { left: "0%", top: "0%", height: "50%", width: "10%" },
-      { left: "10%", top: "0%", height: "70%", width: "15%" },
-      { left: "75%", top: "10%", height: "80%", width: "15%" },
-      { left: "90%", top: "40%", height: "60%", width: "10%" },
-    ],
+    id: "medium",
+    count: 50,
+    depth: 0.6,
   },
   {
-    positions: [
-      { left: "0%", top: "16.5%", height: "32%", width: "20%" },
-      { left: "20%", top: "2.7%", height: "55%", width: "34%" },
-      { left: "38%", top: "0%", height: "100%", width: "62%" },
-      { left: "0%", top: "47.3%", height: "55%", width: "34%" },
-      { left: "34%", top: "56.4%", height: "32%", width: "20%" },
-      { left: "65%", top: "45%", height: "55%", width: "34%" },
-      { left: "80%", top: "68%", height: "32%", width: "20%" },
-    ],
+    id: "large",
+    count: 25,
+    depth: 0.7,
   },
 ];
 
-const ROUNDNESS: any = [
-  { borderRadius: "6rem" },
-  { borderRadius: "0rem" },
-  { borderRadius: "30rem" },
-  [
-    { borderBottomLeftRadius: "10rem" },
-    { borderRadius: "20rem" },
-    { borderTopRightRadius: "12rem" },
-    { borderTopRightRadius: "10rem", borderBottomRightRadius: "10rem" },
-    { borderBottomLeftRadius: "10rem" },
-    { borderTopLeftRadius: "16rem" },
-    { borderTopLeftRadius: "10rem" },
-  ],
-];
+interface HomeProps {
+  seed: number;
+}
 
-const COMBINATIONS = [
-  { configuration: 0, roundness: 0 },
-  { configuration: 0, roundness: 1 },
-  { configuration: 0, roundness: 3 },
-  { configuration: 1, roundness: 1 },
-  { configuration: 1, roundness: 2 },
-  { configuration: 2, roundness: 2 },
-];
-
-const randomInteger = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-const Home: NextPage = () => {
-  const [configurationIndex, setConfigurationIndex] = React.useState(0);
-  const [roundnessIndex, setRoundnessIndex] = React.useState(0);
-
-  // Randomly select a configuration and roundness
+const Home: NextPage<HomeProps> = ({ seed }) => {
+  // Enable parallax effect on component mount
   React.useEffect(() => {
-    const interval = setInterval(() => {
-      // Get a random combination
-      const combination =
-        COMBINATIONS[randomInteger(0, COMBINATIONS.length - 1)];
-
-      // Set the configuration and roundness
-      setConfigurationIndex(combination.configuration);
-      setRoundnessIndex(combination.roundness);
-    }, 3000);
-
-    return () => clearInterval(interval);
+    const scene = document.getElementById("scene");
+    if (scene) {
+      const parallaxInstance = new Parallax(scene);
+      console.log(scene);
+      return () => parallaxInstance.disable();
+    } else {
+      console.log("scene not found");
+      return;
+    }
   }, []);
+
+  let gen = require("random-seed").create(seed);
 
   return (
     <React.Fragment>
@@ -107,34 +55,74 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ThemeSwitcher />
+      <div className="z-0 top-0 left-0 fixed w-full h-[100vh] overflow-hidden bg-offwhite dark:bg-black">
+        <div
+          id="scene"
+          data-pointer-events="true"
+          className="pointer-events-none"
+          style={{ height: "inherit" }}
+        >
+          {/* Loop through each layer and create the specified number of stars */}
+          {STAR_LAYERS.map((layer) => (
+            <div
+              key={layer.id}
+              id={`stars-${layer.id}`}
+              data-depth={layer.depth}
+            >
+              {[...Array(layer.count)].map((_, i) => {
+                // Randomly generate a number between 1-5 for the size
+                const size = `${gen.intBetween(1, 3)}px`;
+                // Randomly generate two numbers between 1-110 for the x and y coordinates
+                const x = `${gen.intBetween(1, 110) - 5}vw`;
+                const y = `${gen.intBetween(1, 110) - 5}vh`;
 
-      <div className="min-w-screen min-h-screen overflow-hidden bg-black grid place-items-center m-0">
-        <main className="relative aspect-golden" style={{ width: "90vmin" }}>
-          {SHAPES.map((shape: any, index: number) => {
-            // If ROUNDNESS[roudnessIndex] is an array, then it should be of length SHAPES.length.
-            // In which case, we use the index of the shape to determine the roundness.
-            const roundness = Array.isArray(ROUNDNESS[roundnessIndex])
-              ? ROUNDNESS[roundnessIndex][index]
-              : ROUNDNESS[roundnessIndex];
+                return (
+                  <div
+                    key={i}
+                    // make stars glow and animate pulse with random duration
+                    className="absolute inline-block rounded-full bg-black dark:bg-white animate-pulse"
+                    style={{
+                      width: size,
+                      height: size,
+                      left: x,
+                      top: y,
+                      animationDuration: `${gen.intBetween(3000, 10000)}ms`,
+                    }}
+                  />
+                );
+              })}
+            </div>
+          ))}
 
-            const styles = {
-              ...shape,
-              ...CONFIGURATIONS[configurationIndex].positions[index],
-              ...roundness,
-            };
-            return (
-              <div
-                key={index}
-                style={styles}
-                className="absolute transition-all duration-[750ms] ease-in-out"
-              ></div>
-            );
-          })}
-        </main>
+          {/* Text layers */}
+          <h1 id="text-1" data-depth="1.0">
+            <span
+              className="absolute inline-block"
+              style={{ top: "20vh", left: "30vw" }}
+            >
+              Connecting Students
+            </span>
+          </h1>
+          <h1 id="text-2" data-depth="0.9">
+            <span
+              className="absolute inline-block"
+              style={{ top: "40vh", left: "40vw" }}
+            >
+              {" "}
+              to the Blockchain
+            </span>
+          </h1>
+        </div>
       </div>
+
+      <ThemeSwitcher />
     </React.Fragment>
   );
 };
+
+export async function getServerSideProps() {
+  const seed = Math.floor(Math.random() * 1000000);
+  return { props: { seed } };
+}
 
 export default Home;
