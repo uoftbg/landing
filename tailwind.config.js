@@ -5,6 +5,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      "sans": ["agenda", "sans-serif"],
+      "serif": ["freight-text-pro", "serif"],
+      "mono": ["Fira Code", "monospace"],
+    },
     aspectRatio: {
       golden: '1.618'  // the golden ratio
     },

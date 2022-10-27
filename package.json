@@ -17,6 +17,7 @@
     "random-seed": "^0.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-parallax-tilt": "^1.7.68",
     "react-vanilla-tilt": "^1.0.0",
     "tailwindcss-opentype": "^1.1.0"
   },
