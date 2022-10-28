@@ -29,7 +29,7 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
         mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
-        display: ['Lexend', ...defaultTheme.fontFamily.sans],
+        display: ["Bebas Neue Pro ", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         "offwhite": "#f8f3ed",

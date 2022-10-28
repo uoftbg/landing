@@ -12,6 +12,7 @@ import NavLink from "./NavLink";
 
 import Tilt from "react-parallax-tilt";
 import SocialIcon from "./SocialIcon";
+import LogoFlat from "../public/logo_flat.svg";
 
 export default function Header() {
   return (
@@ -21,6 +22,15 @@ export default function Header() {
           <Link href="#" aria-label="home">
             <Tilt>
               <div className="flex flex-row space-x-5 items-center justify-center group">
+                {/* <div
+                  className="h-12 w-12 aspect-square flex items-center justify-center text-transparent
+                 bg-gradient-to-br from-uoftbg-purple-darkest to-uoftbg-purple-light text-white
+                 transition duration-300 ease-in-out transform group-hover:scale-125 hover:animate-text
+                 group-hover:text-uoftbg-purple-darkest group-hover:from-[#f9f871] group-hover:to-[#ffc75f]"
+                  style={{ userSelect: "none" }}
+                >
+                  <LogoFlat className="h-full w-full fill-current" />
+                </div> */}
                 <Logo />
                 <div
                   className="flex flex-col h-full items-start justify-center tracking-widest small-caps

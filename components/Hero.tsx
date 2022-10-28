@@ -5,17 +5,19 @@ import MouseScrollIcon from "./MouseScrollIcon";
 export function Hero() {
   return (
     <Container className="pt-20 pb-16 lg:pt-32">
-      <h1 className="tracking-wide text-white text-5xl sm:text-7xl sm:leading-tight font-light">
-        A student-run organization focused on{" "}
-        <span
-          className="font-medium text-transparent bg-clip-text bg-gradient-to-r
-                     to-[#845ec2] from-[#c493ff] animate-text
-                     hover:from-[#f9f871] hover:to-[#ffc75f] hover:via-[#ffc75f]"
-        >
-          blockchain
-        </span>{" "}
-        education and networking.
-      </h1>
+      <Tilt>
+        <h1 className="tracking-wide text-white text-5xl sm:text-7xl sm:leading-tight font-light">
+          A student-run organization focused on{" "}
+          <span
+            className="font-medium text-transparent bg-clip-text bg-gradient-to-r
+                       to-[#845ec2] from-[#c493ff] animate-text
+                       hover:from-[#f9f871] hover:to-[#ffc75f] hover:via-[#ffc75f]"
+          >
+            blockchain
+          </span>{" "}
+          education and networking.
+        </h1>
+      </Tilt>
       <div className="mt-36 lg:mt-44">
         <div className="flex flex-row space-x-4 items-center">
           <MouseScrollIcon />
