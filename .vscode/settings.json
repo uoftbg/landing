@@ -1,4 +1,6 @@
 {
     "editor.formatOnSave": true,
-    "typescript.format.insertSpaceAfterTypeAssertion": true
+    "typescript.format.insertSpaceAfterTypeAssertion": true,
+    "workbench.editor.scrollToSwitchTabs": true,
+    "editor.tabSize": 2
 }

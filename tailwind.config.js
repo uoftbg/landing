@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import("tailwindcss").Config} */
 module.exports = {
   content: [
@@ -5,15 +7,30 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      "sans": ["agenda", "sans-serif"],
-      "serif": ["freight-text-pro", "serif"],
-      "mono": ["Fira Code", "monospace"],
-    },
     aspectRatio: {
       golden: '1.618'  // the golden ratio
     },
     extend: {
+      'animation': {
+        'text':'text 3s infinite ease-in-out'
+      },
+      'keyframes': {
+        'text': {
+          '0%, 100%': {
+            'background-size':'200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size':'200% 200%',
+            'background-position': 'right center'
+          }
+        },
+      },
+      fontFamily: {
+        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        mono: ["Fira Code", ...defaultTheme.fontFamily.mono],
+        display: ['Lexend', ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         "offwhite": "#f8f3ed",
         "offblack": "#020604",
@@ -28,7 +45,7 @@ module.exports = {
         "uoftbg-orange": {
           "light": "#D07400",
           "medium": "#A75700",
-          "dark": "#703A00",
+          "dark": "#703A00"
         },
       },
       backgroundImage: {
@@ -38,6 +55,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-opentype'),
+    require('@tailwindcss/aspect-ratio')
   ],
   'darkMode': 'class',
 }
