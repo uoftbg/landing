@@ -2,8 +2,10 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 
-import Header from "../components/Header";
 import Hero from "../components/Hero";
+import About from "../components/About";
+import Mission from "../components/Mission";
+import FullPageSection from "../components/FullPageSection";
 
 const Home: NextPage = () => {
   return (
@@ -16,11 +18,20 @@ const Home: NextPage = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="w-screen h-screen bg-uoftbg-purple-darkest">
-        <Header />
-        <main>
+
+      <div className="overflow-x-hidden">
+        {/* Section 1 - Hero */}
+        <FullPageSection id="hero" header={true}>
           <Hero />
-        </main>
+        </FullPageSection>
+        {/* Section 2 - About (Who are we?) */}
+        <FullPageSection id="about">
+          <About />
+        </FullPageSection>
+        {/* Section 3 - Our Mission (What do we do?) */}
+        <FullPageSection id="mission">
+          <Mission />
+        </FullPageSection>
       </div>
     </React.Fragment>
   );

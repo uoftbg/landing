@@ -17,12 +17,12 @@ export default function Header() {
     <header className="py-10">
       <Container>
         <nav className="relative z-50 flex justify-between items-center">
-          <Link href="#" aria-label="home">
+          <a href="/" aria-label="home">
             <Tilt>
               <div className="flex flex-row space-x-5 items-center justify-center group">
                 <Logo />
                 <div
-                  className="flex flex-col h-full items-start justify-center tracking-widest small-caps
+                  className="flex flex-col h-full items-start justify-center tracking-widest uppercase
                              group-hover:from-[#f9f871] group-hover:to-[#ffc75f] group-hover:via-[#ffc75f] group-hover:text-transparent
                              group-hover:bg-clip-text group-hover:bg-gradient-to-r"
                 >
@@ -31,12 +31,11 @@ export default function Header() {
                 </div>
               </div>
             </Tilt>
-          </Link>
+          </a>
           <div className="hidden md:flex md:gap-x-6">
-            <NavLink href="#home">Home</NavLink>
-            <NavLink href="#events">Events</NavLink>
-            <NavLink href="#about">About us</NavLink>
-            <NavLink href="#team">Contact</NavLink>
+            <NavLink href="/team">Team</NavLink>
+            <NavLink href="/events">Events</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
           </div>
           <div className="flex items-center gap-x-5 md:gap-x-8">
             <div className="hidden md:block">

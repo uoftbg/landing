@@ -13,7 +13,7 @@ interface SocialIconProps {
 export default function SocialIcon({ href, icon, ...props }: SocialIconProps) {
   let { className = "" } = props;
   className = clsx(
-    "inline-block p-1 font-medium small-caps text-md text-white bg-gradient-to-br\
+    "inline-block p-1 font-medium text-md text-white bg-gradient-to-br\
      hover:text-uoftbg-purple-darkest hover:from-[#f9f871] hover:to-[#ffc75f]\
      transition-transform duration-300 ease-in-out transform hover:scale-125",
     props.className

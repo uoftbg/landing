@@ -1,0 +1,65 @@
+[
+  {
+    "type": "exec",
+    "name": "Ivan Wu",
+    "position": "President",
+    "linkedin": "https://www.linkedin.com/in/ivan-wu03/",
+    "group": 0
+  },
+  {
+    "type": "exec",
+    "name": "Shirley Li",
+    "position": "Vice-President",
+    "linkedin": "https://www.linkedin.com/in/li-shirley/",
+    "group": 0
+  },
+  {
+    "type": "exec",
+    "name": "Gregor Hrelja",
+    "position": "Director of Content",
+    "linkedin": "https://www.linkedin.com/in/gregorhrelja/",
+    "group": 1
+  },
+  {
+    "type": "exec",
+    "name": "Fion Huang",
+    "position": "Director of Marketing",
+    "linkedin": "https://www.linkedin.com/in/fionhuang27/",
+    "group": 1
+  },
+  {
+    "type": "exec",
+    "name": "Jessica Song",
+    "position": "Director of Corporate Relations",
+    "linkedin": "https://www.linkedin.com/in/jessica-song-aa968316a/",
+    "group": 1
+  },
+  {
+    "type": "exec",
+    "name": "Tabitha D'Mello",
+    "position": "Director of Interns",
+    "linkedin": "https://www.linkedin.com/in/tabitha-dmello-10270b218/",
+    "group": 1
+  },
+  {
+    "type": "exec",
+    "name": "Colin Jia",
+    "position": "Marketing Manager",
+    "linkedin": "https://www.linkedin.com/in/colin-jia/",
+    "group": 1
+  },
+  {
+    "type": "advisor",
+    "name": "Prof. Andreas Park",
+    "position": "Strategic Advisor",
+    "linkedin": "https://www.linkedin.com/in/andreaspark/",
+    "group": 0
+  },
+  {
+    "type": "advisor",
+    "name": "Shashank Motepalli",
+    "position": "Strategic Advisor",
+    "linkedin": "https://www.linkedin.com/in/shashankmotepalli/",
+    "group": 0
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "name": "exec",
+    "label": "Executive",
+    "header": "Executives"
+  },
+  {
+    "name": "advisor",
+    "label": "Advisor",
+    "header": "Advisors"
+  }
+]

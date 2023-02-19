@@ -20,7 +20,7 @@ export default function NavLink({ href, children }: NavLinkProps) {
     <Tilt>
       <Link href={href}>
         <a
-          className="inline-block py-2 px-3 font-medium small-caps text-md text-white bg-gradient-to-br
+          className="inline-block py-2 px-3 font-semibold uppercase text-md text-white bg-gradient-to-br
                      hover:text-uoftbg-purple-darkest hover:from-[#f9f871] hover:to-[#ffc75f]"
         >
           {children}

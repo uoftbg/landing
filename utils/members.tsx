@@ -1,0 +1,79 @@
+/**
+ * A member type.
+ *
+ * @typedef {Object} MemberType
+ * @property {string} name - The name of the member type.
+ * @property {string} label - The label of the member type.
+ * @property {string} header - The header of the member type.
+ */
+interface MemberType {
+  name: string;
+  label: string;
+  header: string;
+}
+
+/**
+ * A member.
+ *
+ * @typedef {Object} Member
+ * @property {MemberType} type - The member type.
+ * @property {string} name - The name of the member.
+ * @property {string} position - The position of the member.
+ * @property {string} linkedin - The LinkedIn URL of the member.
+ * @property {number} group - The group of the member. Lower numbers indicate seniority within the type.
+ */
+interface Member {
+  type: MemberType;
+  name: string;
+  position: string;
+  linkedin: string;
+  group: number;
+}
+
+/**
+ * All member types.
+ */
+export const memberTypes: MemberType[] =
+  require("../public/member_types.json").map((memberType: any) => {
+    return {
+      name: memberType.name,
+      label: memberType.label,
+      header: memberType.header,
+    };
+  });
+
+/**
+ * All members.
+ */
+export const members: Member[] = require("../public/members.json").map(
+  (member: any) => {
+    return {
+      type: memberTypes.find(
+        (memberType: any) => memberType.name === member.type
+      ),
+      name: member.name,
+      position: member.position,
+      linkedin: member.linkedin,
+      group: member.group,
+    };
+  }
+);
+
+/**
+ * Get all members partitioned by their group.
+ * @param {MemberType} type - The member type to filter by.
+ * @returns {Member[][]} Array of member groups. Each group is an array of members.
+ */
+export const getMembersByGroup = (type?: MemberType) => {
+  const memberGroups: Member[][] = [];
+  members
+    .filter((member) => !type || member.type.name === type.name)
+    .sort((a, b) => a.group - b.group)
+    .forEach((member) => {
+      if (!memberGroups[member.group]) {
+        memberGroups[member.group] = [];
+      }
+      memberGroups[member.group].push(member);
+    });
+  return memberGroups;
+};

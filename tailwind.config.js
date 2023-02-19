@@ -55,7 +55,8 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-opentype'),
-    require('@tailwindcss/aspect-ratio')
+    require('@tailwindcss/aspect-ratio'),
+    require('tailwind-scrollbar-hide')
   ],
   'darkMode': 'class',
 }
