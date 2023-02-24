@@ -3,7 +3,7 @@ import type { Container, Engine } from "tsparticles-engine";
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-export default () => {
+export default function ParticleBg() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadFull(engine);
   }, []);
@@ -58,4 +58,4 @@ export default () => {
       }}
     />
   );
-};
+}
