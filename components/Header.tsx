@@ -18,19 +18,23 @@ export default function Header() {
       <Container>
         <nav className="relative z-50 flex justify-between items-center">
           <Link href="/" aria-label="home">
-            <Tilt>
-              <div className="flex flex-row space-x-5 items-center justify-center group">
-                <Logo />
-                <div
-                  className="flex flex-col h-full items-start justify-center tracking-widest uppercase text-white
-                             group-hover:from-[#f9f871] group-hover:to-[#ffc75f] group-hover:via-[#ffc75f] group-hover:text-transparent
-                             group-hover:bg-clip-text group-hover:bg-gradient-to-r"
-                >
-                  <h2 className="text-xs font-light">University of Toronto</h2>
-                  <h1 className="text-xl font-bold">Blockchain Group</h1>
+            <a>
+              <Tilt>
+                <div className="flex flex-row space-x-5 items-center justify-center group">
+                  <Logo />
+                  <div
+                    className="flex flex-col h-full items-start justify-center tracking-widest uppercase text-white
+                               group-hover:from-[#f9f871] group-hover:to-[#ffc75f] group-hover:via-[#ffc75f] group-hover:text-transparent
+                               group-hover:bg-clip-text group-hover:bg-gradient-to-r"
+                  >
+                    <h2 className="text-xs font-light">
+                      University of Toronto
+                    </h2>
+                    <h1 className="text-xl font-bold">Blockchain Group</h1>
+                  </div>
                 </div>
-              </div>
-            </Tilt>
+              </Tilt>
+            </a>
           </Link>
           <div className="hidden md:flex md:gap-x-6">
             <NavLink href="/team">Team</NavLink>
