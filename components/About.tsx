@@ -26,7 +26,7 @@ export function About() {
         gyroscope={true}
         className="group"
       >
-        <Container className="pt-8 pb-16 px-12 sm:px-0">
+        <Container className="pt-8 pb-16">
           <h1 className="tracking-wide text-5xl sm:text-[9rem] sm:leading-tight">
             <span
               className="font-semibold px-3 text-transparent bg-clip-text animate-text bg-offwhite
@@ -47,7 +47,7 @@ export function About() {
             </div>
 
             <div className="shrink-0 w-full sm:w-1/3 flex flex-col justify-center space-y-5">
-              <h3 className="text-white text-5xl font-light leading-tight small-caps group-hover:from-[#f9f871] group-hover:to-[#ffc75f] group-hover:via-[#ffc75f] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r">
+              <h3 className="text-white text-5xl font-light leading-tight small-caps">
                 WE ARE A COMMUNITY
               </h3>
               <p className="text-white text-md leading-loose font-light">

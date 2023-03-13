@@ -1,6 +1,6 @@
 import Container from "../components/Container";
 import Tilt from "react-parallax-tilt";
-import MouseScrollIcon from "./MouseScrollIcon";
+import PleaseScroll from "./PleaseScroll";
 
 export function Hero() {
   return (
@@ -27,12 +27,7 @@ export function Hero() {
           </h1>
         </Tilt>
         <div className="mt-36 lg:mt-44">
-          <div className="flex flex-row space-x-4 items-center">
-            <MouseScrollIcon />
-            <p className="text-transparent text-sm font-light tracking-wide bg-gradient-to-r bg-clip-text from-gray-400 to-gray-400 via-gray-50 animate-text">
-              Please scroll
-            </p>
-          </div>
+          <PleaseScroll />
           {/* <ul
             role="list"
             className="mt-8 flex items-center justify-center gap-x-8 sm:flex-col sm:gap-x-0 sm:gap-y-10 xl:flex-row xl:gap-x-12 xl:gap-y-0"
