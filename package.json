@@ -28,6 +28,7 @@
     "react-parallax-tilt": "^1.7.68",
     "react-tsparticles": "^2.9.3",
     "react-vanilla-tilt": "^1.0.0",
+    "tailwind-merge": "^1.10.0",
     "tailwind-scrollbar-hide": "^1.1.7",
     "tailwindcss-opentype": "^1.1.0",
     "tsparticles": "^2.9.3"

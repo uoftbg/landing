@@ -19,13 +19,10 @@ interface FullPageSectionProps {
  */
 function FullPageSection({ children, header, ...props }: FullPageSectionProps) {
   return (
-    <section
-      className="w-screen min-h-screen bg-uoftbg-purple-darkest"
-      {...props}
-    >
+    <div className="w-screen min-h-screen bg-uoftbg-purple-darkest" {...props}>
       {header && <Header />}
       {children}
-    </section>
+    </div>
   );
 }
 

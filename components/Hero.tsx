@@ -6,7 +6,14 @@ export function Hero() {
   return (
     <main>
       <Container className="pt-20 pb-16 lg:pt-32">
-        <Tilt>
+        <Tilt
+          scale={1.1}
+          perspective={1000}
+          transitionSpeed={500}
+          tiltMaxAngleX={10}
+          tiltMaxAngleY={10}
+          gyroscope={true}
+        >
           <h1 className="tracking-wide text-white text-5xl sm:text-7xl sm:leading-tight font-light">
             A student-run organization focused on{" "}
             <span
