@@ -26,8 +26,12 @@ export default function Header() {
                              group-hover:from-[#f9f871] group-hover:to-[#ffc75f] group-hover:via-[#ffc75f] group-hover:text-transparent
                              group-hover:bg-clip-text group-hover:bg-gradient-to-r"
                 >
-                  <h2 className="text-xs font-light">University of Toronto</h2>
-                  <h1 className="text-xl font-bold">Blockchain Group</h1>
+                  <h2 className="text-xs font-light text-white">
+                    University of Toronto
+                  </h2>
+                  <h1 className="text-xl font-bold text-white">
+                    Blockchain Group
+                  </h1>
                 </div>
               </div>
             </Tilt>
