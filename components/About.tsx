@@ -1,8 +1,8 @@
+import { useRef } from "react";
+import Tilt from "react-parallax-tilt";
+
 import Container from "../components/Container";
 import Logo from "../components/Logo";
-
-import Tilt from "react-parallax-tilt";
-import { useRef } from "react";
 
 /**
  * Returns a random floating point number sampled uniformly from the range [min, max).
