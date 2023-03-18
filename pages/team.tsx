@@ -24,8 +24,8 @@ const Team: NextPage = () => {
 
   return (
     <Page>
-      <div id="hero" className="py-32 sm:py-48 lg:py-56">
-        <h1 className="text-white text-5xl font-light tracking-wide leading-tight lg:leading-tight lg:text-9xl">
+      <div id="hero" className="py-32 sm:py-48 lg:py-56 min-h-screen">
+        <h1 className="text-white text-7xl font-light tracking-wide leading-tight lg:leading-tight lg:text-9xl">
           <div className="flex flex-col">
             <span>MEET OUR</span>
             <span>TEAM</span>
