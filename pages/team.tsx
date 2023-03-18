@@ -46,7 +46,7 @@ const Team: NextPage = () => {
                 onClick={() => setActiveType(memberTypes[0])}
               >
                 <ArrowLongDownIcon
-                  className="h-12 w-12 stroke-[0.5px] subpixel-antialiased animate-bounce-slow group-hover:text-uoftbg-purple-darkest
+                  className="h-12 w-12 text-white stroke-[0.5px] subpixel-antialiased animate-bounce-slow group-hover:text-uoftbg-purple-darkest
                              transition-all duration-300 ease-in-out bg-none group-hover:h-14 group-hover:w-14 group-hover:stroke-1"
                 />
               </reactScroll.Link>
