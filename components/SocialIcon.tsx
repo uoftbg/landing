@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Tilt from "react-parallax-tilt";
 import { twMerge } from "tailwind-merge";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import ResponsiveTilt from "./ResponsiveTilt";
 
 interface SocialIconProps {
   href: string;
@@ -20,7 +21,7 @@ export default function SocialIcon({ href, icon, ...props }: SocialIconProps) {
   );
 
   return (
-    <Tilt>
+    <ResponsiveTilt>
       <Link href={href}>
         <a
           target="_blank"
@@ -31,6 +32,6 @@ export default function SocialIcon({ href, icon, ...props }: SocialIconProps) {
           <FontAwesomeIcon icon={icon} size="lg" />
         </a>
       </Link>
-    </Tilt>
+    </ResponsiveTilt>
   );
 }

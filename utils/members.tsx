@@ -21,6 +21,7 @@ interface MemberType {
  * @property {string} position - The position of the member.
  * @property {string} linkedin - The LinkedIn URL of the member.
  * @property {number} group - The group of the member. Lower numbers indicate seniority within the type.
+ * @property {string} image - The image of the member.
  */
 interface Member {
   type: MemberType;
@@ -28,6 +29,7 @@ interface Member {
   position: string;
   linkedin: string;
   group: number;
+  image: string;
 }
 
 /**
@@ -55,6 +57,7 @@ export const members: Member[] = require("../public/members.json").map(
       position: member.position,
       linkedin: member.linkedin,
       group: member.group,
+      image: member.image,
     };
   }
 );
@@ -76,4 +79,14 @@ export const getMembersByGroup = (type?: MemberType) => {
       memberGroups[member.group].push(member);
     });
   return memberGroups;
+};
+
+/**
+ *  Get all members of a given type.
+ * @param {MemberType} type - The member type to filter by.
+ * @returns {Member[]} Array of members.
+ */
+export const getMembersByType = (type?: MemberType) => {
+  const memberGroups: Member[][] = getMembersByGroup(type);
+  return memberGroups.flat();
 };

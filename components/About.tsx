@@ -1,8 +1,8 @@
 import { useRef } from "react";
-import Tilt from "react-parallax-tilt";
 
 import Container from "../components/Container";
 import Logo from "../components/Logo";
+import ResponsiveTilt from "./ResponsiveTilt";
 
 /**
  * Returns a random floating point number sampled uniformly from the range [min, max).
@@ -17,7 +17,7 @@ export function About() {
   const ref = useRef<HTMLDivElement>(null);
   return (
     <div ref={ref}>
-      <Tilt
+      <ResponsiveTilt
         scale={1.1}
         perspective={1000}
         transitionSpeed={2000}
@@ -63,7 +63,7 @@ export function About() {
             </div>
           </div>
         </Container>
-      </Tilt>
+      </ResponsiveTilt>
     </div>
   );
 }

@@ -1,11 +1,8 @@
-import Tilt from "react-parallax-tilt";
-
-import Container from "../components/Container";
-import PleaseScroll from "./PleaseScroll";
+import ResponsiveTilt from "./ResponsiveTilt";
 
 export function Hero() {
   return (
-    <Tilt
+    <ResponsiveTilt
       scale={1.1}
       perspective={1000}
       transitionSpeed={500}
@@ -13,7 +10,7 @@ export function Hero() {
       tiltMaxAngleY={10}
       gyroscope={true}
     >
-      <h1 className="text-white text-5xl font-light tracking-wide leading-tight lg:leading-tight lg:text-7xl">
+      <h1 className="text-white font-light tracking-wide text-4xl sm:text-5xl lg:text-7xl leading-tight lg:leading-tight">
         A student-run organization focused on{" "}
         <span
           className="font-medium text-transparent bg-clip-text bg-gradient-to-r
@@ -24,7 +21,7 @@ export function Hero() {
         </span>{" "}
         education and networking.
       </h1>
-    </Tilt>
+    </ResponsiveTilt>
   );
 }
 

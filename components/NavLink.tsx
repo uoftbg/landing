@@ -1,6 +1,7 @@
 import Link from "next/link";
-import Tilt from "react-parallax-tilt";
 import { twMerge } from "tailwind-merge";
+
+import ResponsiveTilt from "./ResponsiveTilt";
 
 /**
  * Props for the NavLink component.
@@ -36,6 +37,6 @@ export default function NavLink({ href, children, ...props }: NavLinkProps) {
 
   return (
     // Conditionally apply the tilt effect
-    tilt ? <Tilt>{content}</Tilt> : content
+    tilt ? <ResponsiveTilt>{content}</ResponsiveTilt> : content
   );
 }

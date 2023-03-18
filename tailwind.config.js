@@ -7,12 +7,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    aspectRatio: {
-      golden: '1.618'  // the golden ratio
-    },
     extend: {
       'animation': {
-        'text':'text 3s infinite ease-in-out'
+        'text':'text 3s infinite ease-in-out',
+        'bounce-slow':'bounce 2s infinite ease-in-out',
+        'bounce-slower':'bounce 3s infinite ease-in-out',
       },
       'keyframes': {
         'text': {
@@ -24,7 +23,7 @@ module.exports = {
             'background-size':'200% 200%',
             'background-position': 'right center'
           }
-        },
+        }
       },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],

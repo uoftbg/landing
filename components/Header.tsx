@@ -1,19 +1,17 @@
-import Link from "next/link";
 import { useState } from "react";
-import Tilt from "react-parallax-tilt";
 
 import {
   faDiscord,
   faInstagram,
-  faLinkedin,
+  faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import Container from "../components/Container";
-import Logo from "../components/Logo";
 import NavLink from "../components/NavLink";
 import SocialIcon from "../components/SocialIcon";
+import NavLogo from "./NavLogo";
 
 const navigation = [
   { name: "Team", href: "/team" },
@@ -45,26 +43,7 @@ export default function Header() {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <Link href="/" aria-label="home">
-              <a>
-                <span className="sr-only">UofT Blockchain Group</span>
-                <Tilt>
-                  <div className="flex flex-row space-x-5 items-center justify-center group">
-                    <Logo />
-                    <div
-                      className="flex flex-col h-full items-start justify-center tracking-widest uppercase text-white
-                                    group-hover:from-[#f9f871] group-hover:to-[#ffc75f] group-hover:via-[#ffc75f] group-hover:text-transparent
-                                    group-hover:bg-clip-text group-hover:bg-gradient-to-r"
-                    >
-                      <h2 className="text-xs font-light">
-                        University of Toronto
-                      </h2>
-                      <h1 className="text-xl font-bold">Blockchain Group</h1>
-                    </div>
-                  </div>
-                </Tilt>
-              </a>
-            </Link>
+            <NavLogo />
           </div>
           {/* Mobile menu button */}
           <div className="flex lg:hidden">
@@ -106,16 +85,7 @@ export default function Header() {
                            bg-offblack sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
         >
           <div className="flex items-center justify-between">
-            <Link href="/" aria-label="home">
-              <a>
-                <span className="sr-only">UofT Blockchain Group</span>
-                <Tilt gyroscope={true}>
-                  <div className="flex flex-row space-x-5 items-center justify-center group">
-                    <Logo />
-                  </div>
-                </Tilt>
-              </a>
-            </Link>
+            <NavLogo />
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-white"
