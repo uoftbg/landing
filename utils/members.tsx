@@ -6,7 +6,7 @@
  * @property {string} label - The label of the member type.
  * @property {string} header - The header of the member type.
  */
-interface MemberType {
+export interface MemberType {
   name: string;
   label: string;
   header: string;
@@ -23,7 +23,7 @@ interface MemberType {
  * @property {number} group - The group of the member. Lower numbers indicate seniority within the type.
  * @property {string} image - The image of the member.
  */
-interface Member {
+export interface Member {
   type: MemberType;
   name: string;
   position: string;
