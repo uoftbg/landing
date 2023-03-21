@@ -47,8 +47,8 @@ const Contact: NextPage = () => (
       content={
         <div className="">
           <p className="text-white text-lg sm:text-xl tracking-widest leading-relaxed sm:leading-loose">
-            We'd love to hear from you! Fill out the form below and we'll get
-            back to you as soon as possible.
+            We&apos;d love to hear from you! Fill out the form below and
+            we&apos;ll get back to you as soon as possible.
           </p>
         </div>
       }
