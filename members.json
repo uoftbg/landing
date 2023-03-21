@@ -5,7 +5,8 @@
     "position": "President",
     "linkedin": "https://www.linkedin.com/in/ivan-wu03/",
     "image": "/images/ivan.jpg",
-    "group": 0
+    "group": 0,
+    "description": "Ivan is a commerce student @ UofT. He is a blockchain fanatic and an avid investor with a focus in tech. Ivan has led multiple student organizations in the past and looks forward to establishing UTBG as a prominent name in Toronto's crypto community."
   },
   {
     "type": "exec",
@@ -13,7 +14,8 @@
     "position": "Vice-President",
     "linkedin": "https://www.linkedin.com/in/li-shirley/",
     "image": "/images/shirley.jpg",
-    "group": 0
+    "group": 0,
+    "description": "Shirley is a commerce student @ UofT with focuses in finance, strategy, and marketing. Shirley has extensive experience in consulting and an interest in law. She is also the VP of Finance at UofT's Hemoglobal project. Shirley will be joining Scotiabank as a strategy intern in 2023."
   },
   {
     "type": "exec",
@@ -21,7 +23,8 @@
     "position": "Director of Content",
     "linkedin": "https://www.linkedin.com/in/gregorhrelja/",
     "image": "/images/gregor.jpg",
-    "group": 1
+    "group": 1,
+    "description": "Gregor is an economics student @ UofT and is a blockchain and investments enthusiast. Gregor has experience in business development, having previously completed 3 internships at tech startups. Gregor heads all content development @ UTBG."
   },
   {
     "type": "exec",
@@ -29,7 +32,8 @@
     "position": "Director of Marketing",
     "linkedin": "https://www.linkedin.com/in/fionhuang27/",
     "image": "/images/fion.jpg",
-    "group": 1
+    "group": 1,
+    "description": "Fion is a commerce student @ UofT. Fion has extensive experience in running student organizations — notably as VP of events at students framework (a student consulting agency). Fion is currently working as a commercial real estate intern at Project Destined x Colliers."
   },
   {
     "type": "exec",
@@ -38,7 +42,8 @@
     "linkedin": "https://www.linkedin.com/in/jessica-song-aa968316a/",
     "email": "jess.song@mail.utoronto.ca",
     "image": "/images/jess.jpg",
-    "group": 1
+    "group": 1,
+    "description": "Jessica is a commerce student @ UoFt with an Anthropology minor. Jessica has  previous experience in corporate relations, having run her own organization connecting students to volunteer opportunities. Jessica is currently an admin at the Faculty of Applied Science and Engineering and will be joining Molson Coors Beverage Company as a Sales Emerging Growth Intern for summer 2023."
   },
   {
     "type": "exec",
@@ -46,7 +51,8 @@
     "position": "Director of Interns",
     "linkedin": "https://www.linkedin.com/in/tabitha-dmello-10270b218/",
     "image": "/images/tabitha.jpg",
-    "group": 1
+    "group": 1,
+    "description": "Tabitha is a commerce student @ UofT. She currently oversees the first year internship program at UTBG. She has previous experience leading students and mentees. Tabitha is currently working at the Ontario Secruities Exchange at the Investors Communication Desk."
   },
   {
     "type": "exec",
