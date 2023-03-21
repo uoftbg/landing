@@ -20,6 +20,7 @@ export interface MemberType {
  * @property {string} name - The name of the member.
  * @property {string} position - The position of the member.
  * @property {string} linkedin - The LinkedIn URL of the member.
+ * @property {string | null} email - The email of the member. Can be null if not specified.
  * @property {number} group - The group of the member. Lower numbers indicate seniority within the type.
  * @property {string} image - The image of the member.
  */
@@ -28,6 +29,7 @@ export interface Member {
   name: string;
   position: string;
   linkedin: string;
+  email: string | null;
   group: number;
   image: string;
 }
@@ -56,6 +58,7 @@ export const members: Member[] = require("../public/members.json").map(
       name: member.name,
       position: member.position,
       linkedin: member.linkedin,
+      email: member.email,
       group: member.group,
       image: member.image,
     };
