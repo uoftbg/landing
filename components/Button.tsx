@@ -1,5 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
+import ResponsiveTilt from "./ResponsiveTilt";
+
 interface ButtonProps {
   children: React.ReactNode;
   arrow?: boolean;
@@ -11,15 +13,15 @@ interface ButtonProps {
 export default function Button({
   children,
   arrow = false,
-  tilt = true,
+  tilt = false,
   textOnly = false,
   ...props
 }: ButtonProps) {
   const { className = "", ...otherProps } = props;
   const arrowBg = textOnly
     ? "bg-white group-hover:bg-gradient-to-br"
-    : "bg-white";
-  return (
+    : "bg-white group-hover:bg-uoftbg-purple-darkest";
+  const content = (
     <button
       {...otherProps}
       className={twMerge(
@@ -51,4 +53,6 @@ export default function Button({
       )}
     </button>
   );
+
+  return tilt ? <ResponsiveTilt>{content}</ResponsiveTilt> : content;
 }

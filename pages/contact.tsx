@@ -5,6 +5,19 @@ import SecondaryHero from "../components/SecondaryHero";
 
 const reactScroll = require("react-scroll");
 
+/**
+ * The email address to send the contact form to.
+ */
+const CONTACT_EMAIL = "uoftbg@gmail.com";
+
+const InputBorderBottom = () => (
+  <div
+    className="absolute inset-x-0 bottom-0 bg-gray-300 opacity-50 h-[0.075rem] peer-focus:h-0.5 transition-all duration-300 ease-in-out
+               peer-focus:opacity-100 peer-focus:bg-gradient-to-br peer-focus:from-[#f9f871] peer-focus:to-[#845ec2] peer-focus:via-[#c493ff]"
+    aria-hidden="true"
+  ></div>
+);
+
 const Input = ({ ...props }) => {
   let { wrapperProps = {}, ...otherProps } = props;
   return (
@@ -13,13 +26,9 @@ const Input = ({ ...props }) => {
         <input
           {...otherProps}
           className="peer block w-full border-0 bg-transparent py-1.5 text-white focus:ring-0 sm:text-base lg:text-xl sm:leading-6
-                             tracking-wide font-medium
-                             focus:outline-none placeholder:text-white placeholder:text-opacity-50"
+                     tracking-wide font-medium focus:outline-none placeholder:text-white placeholder:text-opacity-50"
         />
-        <div
-          className="absolute inset-x-0 bottom-0 border-t border-gray-300 border-opacity-50 peer-focus:border-t-2 peer-focus:border-white"
-          aria-hidden="true"
-        ></div>
+        <InputBorderBottom />
       </div>
     </div>
   );
@@ -53,6 +62,27 @@ const Contact: NextPage = () => (
         action="#"
         method="POST"
         className="px-6 pb-24 pt-20 sm:pb-32 lg:py-48 lg:px-8"
+        onSubmit={(e: any) => {
+          // Get the form data
+          const formData = new FormData(e.target);
+          console.log(formData);
+          const fullName = `${formData.get("first-name")} ${formData.get(
+            "last-name"
+          )}`;
+          const email = formData.get("email");
+          const phoneNumber = formData.get("phone-number") || "N/A";
+          const message = formData.get("message");
+
+          // Encode the data into a URL
+          const subject = `Contact form submission from ${fullName} (${email})`;
+          const body = `Name: ${fullName}\nEmail (reply-to): ${email}\nPhone number: ${phoneNumber}\n\n${message}`;
+          const urlEncodedData = `subject=${encodeURIComponent(
+            subject
+          )}&body=${encodeURIComponent(body)}`;
+
+          // Open the email client
+          window.open(`mailto:${CONTACT_EMAIL}?${urlEncodedData}`);
+        }}
       >
         <div className="max-w-xl lg:mr-0 lg:max-w-2xl xl:max-w-3xl mx-auto">
           <div className="flex flex-col justify-between h-full space-y-8">
@@ -100,10 +130,7 @@ const Contact: NextPage = () => (
                              tracking-wide font-medium
                              focus:outline-none placeholder:text-white placeholder:text-opacity-50"
                 ></textarea>
-                <div
-                  className="absolute inset-x-0 bottom-0 border-t border-gray-300 border-opacity-50 peer-focus:border-t-2 peer-focus:border-white"
-                  aria-hidden="true"
-                ></div>
+                <InputBorderBottom />
               </div>
             </div>
           </div>
@@ -117,7 +144,6 @@ const Contact: NextPage = () => (
             <Button
               type="submit"
               arrow={true}
-              tilt={true}
               textOnly={true}
               className="opacity-50 hover:opacity-100 text-base sm:text-lg"
             >
