@@ -6,10 +6,9 @@ import { twMerge } from "tailwind-merge";
 
 import { faInstagram, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { ArrowLongDownIcon } from "@heroicons/react/24/outline";
 
 import Page from "../components/Page";
-import ResponsiveTilt from "../components/ResponsiveTilt";
+import SecondaryHero from "../components/SecondaryHero";
 import SocialIcon from "../components/SocialIcon";
 import { getMembersByType, MemberType, memberTypes } from "../utils/members";
 
@@ -38,32 +37,22 @@ const Team: NextPage = () => {
 
   return (
     <Page>
-      <div id="hero" className="py-32 sm:py-32 lg:py-56 min-h-screen">
-        <h1 className="text-white text-7xl font-light tracking-wide leading-tight lg:leading-tight lg:text-9xl">
-          <div className="flex flex-col">
-            <span>MEET OUR</span>
-            <span>TEAM</span>
+      <SecondaryHero
+        linkProps={{
+          onClick: () => setActiveTypeAndScroll(memberTypes[0]),
+        }}
+        content={
+          <div className="">
+            <p className="text-white text-lg sm:text-xl tracking-widest leading-relaxed sm:leading-loose">
+              Get to know the people behind the scenes at the University of
+              Toronto Blockchain Group.
+            </p>
           </div>
-        </h1>
-        <div className="mt-10 sm:mt-16 lg:mt-20">
-          <div className="flex">
-            <ResponsiveTilt>
-              <div
-                className="w-36 h-36 rounded-full flex items-center justify-center border border-white border-opacity-50
-                              hover:border-opacity-100 transition-all duration-300 cursor-pointer
-                              hover:shadow-lg hover:scale-105 transform group opacity-80 hover:opacity-90 hover:border-uoftbg-purple-darkest
-                              hover:animate-text hover:bg-gradient-to-br hover:from-[#f9f871] hover:to-[#845ec2] hover:via-[#c493ff]"
-                onClick={() => setActiveTypeAndScroll(memberTypes[0])}
-              >
-                <ArrowLongDownIcon
-                  className="h-12 w-12 text-white stroke-[0.5px] subpixel-antialiased animate-bounce-slow group-hover:text-uoftbg-purple-darkest
-                             transition-all duration-300 ease-in-out bg-none group-hover:h-14 group-hover:w-14 group-hover:stroke-1"
-                />
-              </div>
-            </ResponsiveTilt>
-          </div>
-        </div>
-      </div>
+        }
+      >
+        <span>MEET OUR</span>
+        <span>TEAM</span>
+      </SecondaryHero>
 
       <div id="content" className="py-32">
         <div className="sticky top-24 w-1/3 hidden sm:block" ref={sidebarRef}>
@@ -140,7 +129,6 @@ const Team: NextPage = () => {
                         <div className="group" key={member.name}>
                           <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
                             <div className="relative h-full w-full bg-gray-900">
-                              {/* <div className="group-hover:opacity-75 transition-all duration-500 ease-in-out"> */}
                               <Image
                                 src={member.image}
                                 alt={member.name}
@@ -148,7 +136,6 @@ const Team: NextPage = () => {
                                            group-hover:scale-[1.04] group-hover:grayscale-0"
                                 layout="fill"
                               />
-                              {/* </div> */}
                               <div
                                 className="absolute inset-x-0 top-0 flex h-full items-end justify-start overflow-hidden p-4
                                            transition-all duration-300 ease-in-out opacity-0 translate-y-4
@@ -158,27 +145,29 @@ const Team: NextPage = () => {
                                   aria-hidden="true"
                                   className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-uoftbg-purple-darkest opacity-100"
                                 ></div>
-                                <div className="relative flex flex-row items-center space-x-2">
-                                  <SocialIcon
-                                    href={member.linkedin}
-                                    icon={faLinkedin}
-                                    className="hover:bg-none hover:text-white hover:rotate-0"
-                                    tilt={false}
-                                  />
-                                  {/* <SocialIcon
-                                    href={member.linkedin}
-                                    icon={faInstagram}
-                                    className="hover:bg-none hover:text-white hover:rotate-0"
-                                    tilt={false}
-                                  /> */}
-                                  {member.email != null ? (
+                                <div className="flex flex-col space-y-2">
+                                  <div className="relative flex flex-row items-center space-x-2">
                                     <SocialIcon
-                                      href={`mailto:${member.email}`}
-                                      icon={faEnvelope}
+                                      href={member.linkedin}
+                                      icon={faLinkedin}
                                       className="hover:bg-none hover:text-white hover:rotate-0"
                                       tilt={false}
                                     />
-                                  ) : null}
+                                    {/* <SocialIcon
+                                      href={member.linkedin}
+                                      icon={faInstagram}
+                                      className="hover:bg-none hover:text-white hover:rotate-0"
+                                      tilt={false}
+                                    /> */}
+                                    {member.email != null ? (
+                                      <SocialIcon
+                                        href={`mailto:${member.email}`}
+                                        icon={faEnvelope}
+                                        className="hover:bg-none hover:text-white hover:rotate-0"
+                                        tilt={false}
+                                      />
+                                    ) : null}
+                                  </div>
                                 </div>
                               </div>
                             </div>

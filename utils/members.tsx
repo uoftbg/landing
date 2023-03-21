@@ -18,6 +18,7 @@ export interface MemberType {
  * @typedef {Object} Member
  * @property {MemberType} type - The member type.
  * @property {string} name - The name of the member.
+ * @property {string | null} description - The description of the member. Can be null if not specified.
  * @property {string} position - The position of the member.
  * @property {string} linkedin - The LinkedIn URL of the member.
  * @property {string | null} email - The email of the member. Can be null if not specified.
@@ -27,6 +28,7 @@ export interface MemberType {
 export interface Member {
   type: MemberType;
   name: string;
+  description: string | null;
   position: string;
   linkedin: string;
   email: string | null;
@@ -56,6 +58,7 @@ export const members: Member[] = require("../public/members.json").map(
         (memberType: any) => memberType.name === member.type
       ),
       name: member.name,
+      description: member.description,
       position: member.position,
       linkedin: member.linkedin,
       email: member.email,
