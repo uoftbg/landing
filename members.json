@@ -4,7 +4,7 @@
     "name": "Ivan Wu",
     "position": "President",
     "linkedin": "https://www.linkedin.com/in/ivan-wu03/",
-    "image": "https://media.licdn.com/dms/image/D5603AQF62vpLjM46Pg/profile-displayphoto-shrink_800_800/0/1668896953893?e=1682553600&v=beta&t=hY2fgMx4h_w4dKwjoqRBDBK7zKI0E8-W7kAQdFTrxhA",
+    "image": "/images/ivan.jpg",
     "group": 0
   },
   {
@@ -12,7 +12,7 @@
     "name": "Shirley Li",
     "position": "Vice-President",
     "linkedin": "https://www.linkedin.com/in/li-shirley/",
-    "image": "https://media.licdn.com/dms/image/C5603AQFcxASf7EUk_A/profile-displayphoto-shrink_800_800/0/1662403086979?e=1682553600&v=beta&t=ODUJfUVFbJQVPy93uBHpoSUJiSAwXkIDZtlst1j-0b4",
+    "image": "/images/shirley.jpg",
     "group": 0
   },
   {
@@ -20,7 +20,7 @@
     "name": "Gregor Hrelja",
     "position": "Director of Content",
     "linkedin": "https://www.linkedin.com/in/gregorhrelja/",
-    "image": "https://media.licdn.com/dms/image/D5603AQHwiKAyagCtnA/profile-displayphoto-shrink_800_800/0/1673548096536?e=1682553600&v=beta&t=pMQqzx5vE_b1aBn0CeA82Ye5IypaqD5Ud4xQidaqVKI",
+    "image": "/images/gregor.jpg",
     "group": 1
   },
   {
@@ -28,7 +28,7 @@
     "name": "Fion Huang",
     "position": "Director of Marketing",
     "linkedin": "https://www.linkedin.com/in/fionhuang27/",
-    "image": "https://media.licdn.com/dms/image/C4D03AQFP7JaRbMznqg/profile-displayphoto-shrink_800_800/0/1569611290974?e=1682553600&v=beta&t=9qFJYUD9SMNEhFm_RTSgspOqK6YRtEQrTib0q471mKY",
+    "image": "/images/fion.jpg",
     "group": 1
   },
   {
@@ -36,7 +36,8 @@
     "name": "Jessica Song",
     "position": "Director of Corporate Relations",
     "linkedin": "https://www.linkedin.com/in/jessica-song-aa968316a/",
-    "image": "https://media.licdn.com/dms/image/C4D03AQE_YtxlPa9tRA/profile-displayphoto-shrink_800_800/0/1645905655176?e=1682553600&v=beta&t=FZq8Qrf8V7lWipywrZAsHKJtzfY_34czzCjbQbd_Jpw",
+    "email": "jess.song@mail.utoronto.ca",
+    "image": "/images/jess.jpg",
     "group": 1
   },
   {
@@ -44,7 +45,7 @@
     "name": "Tabitha D'Mello",
     "position": "Director of Interns",
     "linkedin": "https://www.linkedin.com/in/tabitha-dmello-10270b218/",
-    "image": "https://media.licdn.com/dms/image/D5603AQGPMiUUA6_Wfg/profile-displayphoto-shrink_800_800/0/1674601847881?e=1682553600&v=beta&t=0dq3m2oBTFyyiOjaVuHZkkB9KizLZYii1YU0jXaiRNg",
+    "image": "/images/tabitha.jpg",
     "group": 1
   },
   {
@@ -52,6 +53,7 @@
     "name": "Colin Jia",
     "position": "Marketing Manager",
     "linkedin": "https://www.linkedin.com/in/colin-jia/",
+    "image": "/images/colin.jpg",
     "group": 1
   },
   {
@@ -59,7 +61,7 @@
     "name": "Prof. Andreas Park",
     "position": "Strategic Advisor",
     "linkedin": "https://www.linkedin.com/in/andreaspark/",
-    "image": "https://media.licdn.com/dms/image/C5603AQGdrSY4Mk7qcQ/profile-displayphoto-shrink_800_800/0/1530210029206?e=1682553600&v=beta&t=ckZGtsBr6lHoLIGZi_zGMX9Ae_MR34rslTc0_SW0-0g",
+    "image": "/images/andreas_park.jpg",
     "group": 0
   },
   {
@@ -67,7 +69,7 @@
     "name": "Shashank Motepalli",
     "position": "Strategic Advisor",
     "linkedin": "https://www.linkedin.com/in/shashankmotepalli/",
-    "image": "https://media.licdn.com/dms/image/C5603AQHIwCeg_42XTA/profile-displayphoto-shrink_800_800/0/1643748925427?e=1682553600&v=beta&t=o7dIzBC3buIufIL8YV9HXDA1exgL73Xm0vD1A0sEEqU",
+    "image": "/images/shashank_motepalli.jpg",
     "group": 0
   }
 ]
